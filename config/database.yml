@@ -7,13 +7,10 @@ development:
   <<: *default
   database: ncmose_development
 
-
 test:
   <<: *default
   database: ncmose_test
 
 production:
   <<: *default
-  database: ncmose_production
-  username: ncmose
-  password: <%= ENV['NCMOSE_DATABASE_PASSWORD'] %>
+  url: <%= ENV['DATABASE_URL'] %>

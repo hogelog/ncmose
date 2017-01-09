@@ -1,10 +1,16 @@
 {
   "name": "ncmose",
   "repository": "https://github.com/hogelog/ncmose",
+  "logo": "https://upload.wikimedia.org/wikipedia/commons/c/c3/Ruby_on_Rails_logo.svg",
   "addons": [
     "heroku-postgresql"
   ],
+  "env": {
+    "RAILS_ENV": "production",
+    "RACK_ENV": "production",
+    "RAILS_SERVE_STATIC_FILES": "true"
+  },
   "scripts": {
-    "postdeploy": "bundle exec rake db:setup"
+    "postdeploy": "bundle exec rake db:migrate"
   }
 }
