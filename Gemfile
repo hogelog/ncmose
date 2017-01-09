@@ -15,6 +15,8 @@ gem 'uglifier', '>= 1.3.0'
 gem 'jquery-rails'
 gem 'jbuilder', '~> 2.5'
 
+gem "haml-rails", "~> 0.9"
+
 group :development, :test do
   gem 'byebug'
   gem 'pry-byebug'
