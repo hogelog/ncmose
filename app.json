@@ -1,4 +1,10 @@
 {
   "name": "ncmose",
-  "repository": "https://github.com/hogelog/ncmose"
+  "repository": "https://github.com/hogelog/ncmose",
+  "addons": [
+    "heroku-postgresql"
+  ],
+  "scripts": {
+    "postdeploy": "bundle exec rake db:setup"
+  }
 }
