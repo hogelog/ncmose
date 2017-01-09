@@ -18,6 +18,7 @@ gem 'jbuilder', '~> 2.5'
 group :development, :test do
   gem 'byebug'
   gem 'pry-byebug'
+  gem 'rspec-rails', '~> 3.5'
 end
 
 group :development do
