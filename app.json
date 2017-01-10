@@ -1,7 +1,7 @@
 {
   "name": "ncmose",
   "repository": "https://github.com/hogelog/ncmose",
-  "logo": "https://upload.wikimedia.org/wikipedia/commons/c/c3/Ruby_on_Rails_logo.svg",
+  "logo": "https://upload.wikimedia.org/wikipedia/commons/7/72/Japanese_Hiragana_kyokashotai_NA.png",
   "addons": [
     "heroku-postgresql"
   ],
