@@ -1,4 +1,5 @@
 source 'https://rubygems.org'
+ruby "2.4.0"
 
 git_source(:github) do |repo_name|
   repo_name = "#{repo_name}/#{repo_name}" unless repo_name.include?("/")
@@ -16,6 +17,8 @@ gem 'jquery-rails'
 gem 'jbuilder', '~> 2.5'
 
 gem "haml-rails", "~> 0.9"
+
+gem "ridgepole", "0.6.5.beta14"
 
 group :development, :test do
   gem 'byebug'

@@ -11,6 +11,6 @@
     "RAILS_SERVE_STATIC_FILES": "true"
   },
   "scripts": {
-    "postdeploy": "bundle exec rake db:migrate"
+    "postdeploy": "bundle exec rake ridgepole:apply"
   }
 }
