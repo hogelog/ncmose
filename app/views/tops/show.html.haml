@@ -1,1 +1,9 @@
-hello
+%h1 Novels
+%ul
+  - @novels.each do |novel|
+    %li= link_to novel.link_title, novel_path(novel)
+
+%h2 Add Novel
+= form_for Novel.new do |f|
+  = f.text_field :ncode, size: 40
+  = f.submit "Add"

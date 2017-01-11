@@ -20,6 +20,8 @@ gem "haml-rails", "~> 0.9"
 
 gem "ridgepole", "0.6.5.beta14"
 
+gem "action_args"
+
 group :development, :test do
   gem 'byebug'
   gem 'pry-byebug'
