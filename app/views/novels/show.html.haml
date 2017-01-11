@@ -2,5 +2,7 @@
 
 %h2 Episodes
 %ul
+  - @novel.episodes.order(:number).each do |episode|
+    %li= link_to episode.title, episode.ncode_syosetu_url
 
 %p Updated at #{@novel.updated_at}

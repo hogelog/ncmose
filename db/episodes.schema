@@ -1,0 +1,8 @@
+create_table "episodes", force: :cascade do |t|
+  t.integer  "novel_id",              null: false
+  t.integer  "number",                null: false
+  t.string   "title",      limit: 40, null: false
+  t.datetime "created_at",            null: false
+  t.datetime "updated_at",            null: false
+  t.index ["novel_id", "number"], name: "episodes_uniq_novel_id_number", unique: true, using: :btree
+end

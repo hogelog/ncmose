@@ -1,4 +1,6 @@
 class Novel < ApplicationRecord
+  has_many :episodes, dependent: :destroy
+
   def link_title
     "#{title} (#{ncode_syosetu_url})"
   end
