@@ -92,6 +92,7 @@ GEM
       haml (>= 4.0.0.rc.1)
       hpricot (~> 0.8.6)
       ruby_parser (~> 3.1.1)
+    htmlentities (4.3.4)
     http-cookie (1.0.3)
       domain_name (~> 0.5)
     i18n (0.7.0)
@@ -129,6 +130,7 @@ GEM
     ncode-syosetu-polly (0.2.2)
       aws-sdk-polly (= 1.0.0.rc2)
       expeditor (~> 0.5.0)
+      htmlentities
       ncode-syosetu-core (= 0.2.2)
       ncode-syosetu-ssml (= 0.2.2)
       nokogiri (>= 1.6)
