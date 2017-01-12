@@ -12,7 +12,7 @@ class NovelsController < ApplicationController
 
   def destroy(id)
     @novel = Novel.find(id)
-    novel.destroy!
+    @novel.destroy!
     redirect_to root_path
   end
 

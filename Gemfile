@@ -24,6 +24,8 @@ gem "action_args"
 
 gem "ncode-syosetu-core"
 
+gem "denv"
+
 group :development, :test do
   gem 'byebug'
   gem 'pry-byebug'

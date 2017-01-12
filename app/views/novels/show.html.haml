@@ -6,3 +6,6 @@
     %li= link_to episode.title, episode.ncode_syosetu_url
 
 %p Updated at #{@novel.updated_at}
+
+%p
+  = link_to "Delete 「#{@novel.title}」", novel_path(@novel), method: :delete, data: { confirm: "Delete #{@novel.title}?" }
