@@ -1,5 +1,5 @@
 class FetchNovelBatch < BatchBase
-  DEFAULT_SLEEP_SECOND = 1
+  DEFAULT_SLEEP_SECOND = 2
 
   def self.run
     client = NcodeSyosetu::Client.new(logger: logger)

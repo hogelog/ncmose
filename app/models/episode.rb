@@ -1,14 +1,16 @@
 class Episode < ApplicationRecord
+  include EpisodeBase
+
   belongs_to :novel
 
-  def ncode_syosetu_url
-    "http://ncode.syosetu.com/#{novel.ncode}/#{number}"
-  end
+  scode :unsynthesized, -> { where(synthesized: false) }
+
+  delegate :ncode, to: :novel
 
   def archive!
     transaction do
       ArchivedEpisode.create!(
-        ncode: novel.ncode,
+        ncode: ncode,
         number: number,
         title: title,
       )
