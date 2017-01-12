@@ -18,8 +18,6 @@ class SynthesizeEpisodesBatch < BatchBase
     end
   end
 
-  private
-
   def self.upload_mp3!(novel, episode, fetched_episode)
     Tempfile.open(["ncode-#{novel.ncode}-#{episode.number}", ".mp3"]) do |tempfile|
       @polly.write_episode(fetched_episode, tempfile.path)
