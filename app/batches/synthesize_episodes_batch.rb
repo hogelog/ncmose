@@ -16,8 +16,6 @@ class SynthesizeEpisodesBatch < BatchBase
         upload_mp3!(novel, episode, fetched_episode)
       end
     end
-  rescue => e
-    logger.error("#{e.message}\n#{e.backtrace.join("\n")}")
   end
 
   def self.upload_mp3!(novel, episode, fetched_episode)
