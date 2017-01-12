@@ -12,11 +12,15 @@ module EpisodeBase
     "#{ncode}/#{number}-#{title_digest}.mp3"
   end
 
+  def mp3_download_url
+    "#{ENV["MP3_DOWNLOAD_PREFIX"]}#{mp3_path}"
+  end
+
   def s3_path
     "#{ENV["MP3_S3_PREFIX"]}#{mp3_path}"
   end
 
   def s3_url
-    "s3://#{ENV["MP3_S3_BUCKET"]}/#{s3_path}"
+    "s3://#{ENV["MP3_S3_BUCKET"]}/#{s4_path}"
   end
 end
