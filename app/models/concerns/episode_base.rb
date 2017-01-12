@@ -11,4 +11,12 @@ module EpisodeBase
     title_digest = Digest::MD5.hexdigest(title)
     "#{ncode}/#{number}-#{title_digest}.mp3"
   end
+
+  def s3_path
+    "#{ENV["MP3_S3_PREFIX"]}#{mp3_path}"
+  end
+
+  def s3_url
+    "s3://#{ENV["MP3_S3_BUCKET"]}/#{s3_path}"
+  end
 end

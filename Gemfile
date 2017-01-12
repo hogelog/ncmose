@@ -27,6 +27,8 @@ gem "ncode-syosetu-polly"
 
 gem "denv"
 
+gem "aws-sdk-s3"
+
 group :development, :test do
   gem 'byebug'
   gem 'pry-rails'

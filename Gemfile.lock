@@ -45,8 +45,15 @@ GEM
       aws-partitions (~> 1.0)
       aws-sigv4 (~> 1.0)
       jmespath (~> 1.0)
+    aws-sdk-kms (1.0.0.rc1)
+      aws-sdk-core (= 3.0.0.rc1)
+      aws-sigv4 (~> 1.0)
     aws-sdk-polly (1.0.0.rc2)
       aws-sdk-core (= 3.0.0.rc1)
+      aws-sigv4 (~> 1.0)
+    aws-sdk-s3 (1.0.0.rc2)
+      aws-sdk-core (= 3.0.0.rc1)
+      aws-sdk-kms (= 1.0.0.rc1)
       aws-sigv4 (~> 1.0)
     aws-sigv4 (1.0.0)
     builder (3.2.2)
@@ -246,6 +253,7 @@ PLATFORMS
 
 DEPENDENCIES
   action_args
+  aws-sdk-s3
   byebug
   denv
   haml-rails (~> 0.9)

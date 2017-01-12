@@ -3,7 +3,8 @@ class Episode < ApplicationRecord
 
   belongs_to :novel
 
-  scode :unsynthesized, -> { where(synthesized: false) }
+  scope :synthesized, -> { where(synthesized: true) }
+  scope :unsynthesized, -> { where(synthesized: false) }
 
   delegate :ncode, to: :novel
 
