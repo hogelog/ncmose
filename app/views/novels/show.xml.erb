@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom" xmlns:media="http://search.yahoo.com/mrss/" xmlns:dc="http://purl.org/dc/elements/1.1/">
+  <channel>
+    <title><%= @novel.title %></title>
+    <generator>ncmose</generator>
+    <link><%= root_url %></link>
+    <atom:link href="<%= novel_url(@novel, format: :xml) %>" rel="self" type="application/rss+xml" />
+    <media:thumbnail url="https://upload.wikimedia.org/wikipedia/commons/7/72/Japanese_Hiragana_kyokashotai_NA.png" />
+    <language>ja</language>
+
+    <% @novel.episodes.synthesized.order(:number).each do |episode| %>
+          <item>
+        <title><%= episode.title %></title>
+        <pubDate><%= episode.updated_at %></pubDate>
+        <link><%= novel_url(@novel) %></link>
+        <guid isPermaLink="true"><%= novel_url(@novel) %></guid>
+
+
+        <enclosure url="<%= episode.mp3_download_url %>" type="audio/mpeg" length="<%= episode.length %>" />
+      </item>
+
+    <% end %>
+  </channel>
+</rss>

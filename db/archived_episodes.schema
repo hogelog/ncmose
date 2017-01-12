@@ -4,4 +4,5 @@ create_table "archived_episodes", force: :cascade do |t|
   t.string   "title",      limit: 40, null: false
   t.datetime "created_at",            null: false
   t.boolean  "synthesized",           null: false, default: false
+  t.integer  "length",                null: false, default: 0
 end

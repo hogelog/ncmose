@@ -10,8 +10,8 @@ class SynthesizeEpisodesBatch < BatchBase
     @s3 = Aws::S3::Client.new
 
     Novel.includes(:episodes).find_each do |novel|
-      novel.episodes.unsynthesized.each do |episode|
-        logger.info("Synthesize #{novel.title} (#{novel.ncode})...")
+      novel.episodes.unsynthesized.order(:number).each do |episode|
+        logger.info("Synthesize #{novel.title} (#{novel.ncode}) #{episode.number}...")
         fetched_episode = @syosetu.get_episode(novel.ncode, episode.title, episode.number)
         upload_mp3!(novel, episode, fetched_episode)
       end
@@ -32,7 +32,7 @@ class SynthesizeEpisodesBatch < BatchBase
           key: episode.s3_path,
         )
       end
-      episode.update!(synthesized: true)
+      episode.update!(synthesized: true, length: File.size(tempfile.path))
     end
   end
 end
