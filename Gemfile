@@ -23,6 +23,7 @@ gem "ridgepole", "0.6.5.beta14"
 gem "action_args"
 
 gem "ncode-syosetu-core"
+gem "ncode-syosetu-polly"
 
 gem "denv"
 
