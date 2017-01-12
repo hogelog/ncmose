@@ -11,4 +11,7 @@
 %p Updated at #{@novel.updated_at}
 
 %p
+  = link_to "RSS", novel_path(@novel, format: :xml)
+
+%p
   = link_to "Delete 「#{@novel.title}」", novel_path(@novel), method: :delete, data: { confirm: "Delete #{@novel.title}?" }
