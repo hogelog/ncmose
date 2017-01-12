@@ -1,7 +1,6 @@
 class Novel < ApplicationRecord
   has_many :episodes
 
-  after_create :fetch_novel!
   before_destroy :archive_episodes!
 
   def link_title
