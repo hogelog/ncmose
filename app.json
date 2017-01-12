@@ -10,8 +10,14 @@
     "RAILS_ENV": "production",
     "RACK_ENV": "production",
     "RAILS_SERVE_STATIC_FILES": "true",
-    "BASIC_AUTH_USERNAME": "username",
-    "BASIC_AUTH_PASSWORD": "password",
+    "BASIC_AUTH_USERNAME": {
+      "value": "username",
+      "required": false
+    },
+    "BASIC_AUTH_PASSWORD": {
+      "value": "password",
+      "required": false
+    },
     "AWS_ACCESS_KEY_ID": "AKIAXXXXXXXXXXXXX",
     "AWS_SECRET_ACCESS_KEY": "xxxxxxxxxxxxxxx",
     "MP3_S3_BUCKET": "files-bucket",
