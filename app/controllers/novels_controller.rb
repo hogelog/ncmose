@@ -1,5 +1,8 @@
 class NovelsController < ApplicationController
   permits :ncode
+  def index
+    redirect_to root_path
+  end
 
   def show(id)
     @novel = Novel.find(id)
