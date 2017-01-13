@@ -26,6 +26,7 @@ gem "ncode-syosetu-core"
 gem "ncode-syosetu-polly"
 
 gem "denv"
+gem "foreman"
 
 gem "aws-sdk-s3"
 
