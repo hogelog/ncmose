@@ -1,0 +1,11 @@
+%h1 #{@episode.novel.title} - #{@episode.title}
+
+%p
+  Original:
+  = link_to @episode.ncode_syosetu_url, @episode.ncode_syosetu_url
+
+- if @episode.synthesized?
+  %h2 Player
+  %audio{ src: @episode.mp3_download_url, controls: true }
+
+%p Updated at #{@episode.updated_at}

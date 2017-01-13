@@ -12,8 +12,8 @@
           <item>
         <title><%= episode.title %></title>
         <pubDate><%= episode.updated_at %></pubDate>
-        <link><%= novel_url(@novel) %></link>
-        <guid isPermaLink="true"><%= novel_url(@novel) %></guid>
+        <link><%= novel_episode_url(@novel, episode) %></link>
+        <guid isPermaLink="true"><%= novel_episode_url(@novel, episode) %></guid>
 
 
         <enclosure url="<%= episode.mp3_download_url %>" type="audio/mpeg" length="<%= episode.length %>" />

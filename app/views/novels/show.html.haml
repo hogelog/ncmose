@@ -4,7 +4,7 @@
 %ul
   - @novel.episodes.order(:number).each do |episode|
     %li
-      = link_to episode.title, episode.ncode_syosetu_url
+      = link_to episode.title, novel_episode_path(@novel, episode)
       - if episode.synthesized?
         %audio{ src: episode.mp3_download_url, controls: true }
 
