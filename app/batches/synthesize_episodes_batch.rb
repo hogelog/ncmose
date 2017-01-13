@@ -2,12 +2,13 @@ class SynthesizeEpisodesBatch < BatchBase
   DEFAULT_SLEEP_SECOND = 2
 
   def self.run
+    @mp3_s3_region = ENV["MP3_S3_REGION"] or abort("Undefined MP3_S3_REGION")
     @mp3_s3_bucket = ENV["MP3_S3_BUCKET"] or abort("Undefined MP3_S3_BUCKET")
     @mp3_s3_prefix = ENV["MP3_S3_PREFIX"] || ""
 
     @syosetu = NcodeSyosetu::Client.new(logger: logger, sleep: DEFAULT_SLEEP_SECOND)
     @polly = NcodeSyosetu::Builder::Polly.new(logger: logger)
-    @s3 = Aws::S3::Client.new
+    @s3 = Aws::S3::Client.new(region: @mp3_s3_region)
 
     Novel.includes(:episodes).find_each do |novel|
       novel.episodes.unsynthesized.order(:number).each do |episode|
@@ -24,7 +25,6 @@ class SynthesizeEpisodesBatch < BatchBase
       logger.info("Uploading #{episode.s3_path}...")
       File.open(tempfile.path, "rb") do |file|
         @s3.put_object(
-          region: @mp3_s3_region,
           bucket: @mp3_s3_bucket,
           body: file,
           key: episode.s3_path,

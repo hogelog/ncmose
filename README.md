@@ -5,3 +5,6 @@
 ## Requirements
 - Ruby 2.4+
 - PostgreSQL
+- AWS Key
+  - polly:SynthesizeSpeech
+  - s3:PutObject

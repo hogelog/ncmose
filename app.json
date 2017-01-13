@@ -20,6 +20,7 @@
     },
     "AWS_ACCESS_KEY_ID": "AKIAXXXXXXXXXXXXX",
     "AWS_SECRET_ACCESS_KEY": "xxxxxxxxxxxxxxx",
+    "MP3_S3_REGION": "ap-northeast-1",
     "MP3_S3_BUCKET": "files-bucket",
     "MP3_S3_PREFIX": "mp3/",
     "MP3_DOWNLOAD_PREFIX": "https://mp3.example.com/"
