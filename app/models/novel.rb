@@ -19,8 +19,7 @@ class Novel < ApplicationRecord
 
       new_episodes = toc.episodes.select {|episode| episode[:number] }
       episodes.each do |episode|
-        existing_episodes = new_episodes.reject! {|new_episode| episode.title == new_episode[:text] && episode.number == new_episode[:number] }
-        if existing_episodes.empty?
+        unless new_episodes.reject! {|new_episode| episode.title == new_episode[:text] && episode.number == new_episode[:number] }
           episode.archive!
         end
       end
