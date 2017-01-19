@@ -11,7 +11,7 @@
     <% @novel.episodes.synthesized.order(:number).each do |episode| %>
           <item>
         <title><%= episode.title %></title>
-        <pubDate><%= episode.updated_at %></pubDate>
+        <pubDate><%= episode.published_at.rfc822 %></pubDate>
         <link><%= novel_episode_url(@novel, episode) %></link>
         <guid isPermaLink="true"><%= novel_episode_url(@novel, episode) %></guid>
 

@@ -3,6 +3,10 @@ require "digest"
 module EpisodeBase
   extend ActiveSupport::Concern
 
+  def published_at
+    @published_at ||= /(\d+)年 *(\d+)月 *(\d+)日/ =~ title && Date.new($1.to_i, $2.to_i, $3.to_i)
+  end
+
   def ncode_syosetu_url
     "http://ncode.syosetu.com/#{ncode}/#{number}"
   end
